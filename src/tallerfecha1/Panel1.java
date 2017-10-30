@@ -119,6 +119,12 @@ public class Panel1 extends javax.swing.JPanel {
 
         jLabel7.setText("N Cedula");
 
+        cedula_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                cedula_txtKeyTyped(evt);
+            }
+        });
+
         eliminar2.setBackground(new java.awt.Color(153, 0, 0));
         eliminar2.setForeground(new java.awt.Color(255, 255, 255));
         eliminar2.setText("ELIMINAR");
@@ -502,6 +508,10 @@ public class Panel1 extends javax.swing.JPanel {
         //Repositorio.editar(persona);
 
     }//GEN-LAST:event_editar2ActionPerformed
+
+    private void cedula_txtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cedula1_txtKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cedula1_txtKeyTyped
 
     private void popularPersona(Persona persona) {
         cedula_txt.setText(String.valueOf(persona.getCedula()));

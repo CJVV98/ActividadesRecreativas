@@ -51,7 +51,28 @@ public class Panel2 extends javax.swing.JPanel {
         editar.setVisible(false);
     }}
 
-     
+   public void setTableModel(DefaultTableModel table_model_eventos){
+        this. table_model_eventos =  table_model_eventos;
+    }
+    
+    public void refreshTableModel()
+    {
+       ArrayList<Actividad> lista_eventos=Repositorioact.obtenerTodos();
+       while(table_model_eventos.getRowCount()>0){
+            table_model_eventos.removeRow(0);
+       }
+       
+       for(Actividad p: lista_eventos){         
+           SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+           SimpleDateFormat sdh = new SimpleDateFormat("hh:mm:ss");
+           String fecha1=sdf.format(p.getFechai());
+          
+           String hora1=sdh.format(p.getHorainicio());
+           String hora2=sdh.format(p.getHorafin());
+           String[] data={p.getNombre(),fecha1,hora1,hora2,p.getDescripcion(),p.getRecreador()};
+           table_model_eventos.addRow(data);
+       }
+    }  
     
     
     /**
