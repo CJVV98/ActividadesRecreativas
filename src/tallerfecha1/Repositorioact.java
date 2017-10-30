@@ -130,4 +130,8 @@ public class Repositorioact {
 
         return null;
     }*/
+
+    static ArrayList<Actividad> obtenerTodos() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
